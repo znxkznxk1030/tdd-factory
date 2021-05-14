@@ -3,7 +3,7 @@
 -   junit4: java 유닛 테스트 라이브러리
 -   Mockito: Mock객체를 생성하기위한 라이브러리
 
-```
+``` xml
 <!-- ================================================================ -->
 <!--                                 Junit4                               -->
 <!-- ================================================================ -->
@@ -41,7 +41,7 @@
 
 -   스프링 부트에 속한 어노테이션(@Autowired, @Component, ...등)을 사용할 수 있도록 해주는 어노테이션.
 
-```
+``` java
 @RunWith(SpringRunner.class)
 ```
 
@@ -49,7 +49,7 @@
 
 -   스프링 부트를 실행시켜 테스트를 진행시키도록 해주는 어노테이션.
 
-```
+``` java
 @SpringBootTest(classes = Application.class)
 ```
 
@@ -61,7 +61,7 @@ package 하위에 있는 파일들을 스캔해서 모든 외부 configuration�
 
 -   스프링 통합 테스트에 필요한 ApplicationContext를 로드시켜주는 어노테이션
 
-```
+``` java
 @ContextConfiguration( classes = Application.class )
 ```
 
@@ -71,7 +71,7 @@ SpringBootTest와 다르게 지정한 class를 기준으로 confiration을 설�
 
 -   스프링 MVC 테스트를 위한 어노테이션. HTTP 요청/응답을 모킹할 수있게 도와줍니다.
 
-```
+``` java
 @WebMvcTest( controllers = ApprovalPathController.class)
 ```
 
@@ -87,7 +87,7 @@ SpringBootTest와 다르게 지정한 class를 기준으로 confiration을 설�
 
 #### 1\. 어노테이션 세팅
 
-```
+``` java
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class JoinUsBizTest {
@@ -95,7 +95,7 @@ public class JoinUsBizTest {
 
 #### 2\. 테스트할 biz에서 사용한 객체 모킹하기
 
-```
+``` java
 
 
     @Mock
@@ -113,7 +113,7 @@ public class JoinUsBizTest {
 
 #### 3\. biz에 모킹한 객체 주입 및 스파이 설정하기
 
-```
+``` java
  @InjectMocks
  @Spy
  private JoinUsBiz joinUsBiz;
@@ -123,7 +123,7 @@ public class JoinUsBizTest {
 
 #### 1\. 어노테이션 세팅
 
-```
+``` java
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = ApprovalPathController.class)
 @ContextConfiguration( classes = Application.class )
@@ -132,7 +132,7 @@ public class ApprovalPathControllerTest {
 
 #### 2\. 테스트할 biz에서 사용한 객체 모킹하기
 
-```
+``` java
     @MockBean
     private IApprovalPathBiz approvalPathBiz;
 
@@ -142,14 +142,14 @@ public class ApprovalPathControllerTest {
 
 #### 3\. controller에 모킹한 객체 주입하기
 
-```
+``` java
 @InjectMocks
 private ApprovalPathController approvalPathController;
 ```
 
 #### 4\. MockMvc 설정하기
 
-```
+``` java
  private MockMvc mvc;
 
  @Before
