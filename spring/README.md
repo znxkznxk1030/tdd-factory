@@ -76,8 +76,22 @@ SpringBootTest와 다르게 지정한 class를 기준으로 confiration을 설�
 ```
 
 #### @Mock
+-   Mockito.mock 함수로 Mock Ojbect를 생성하는 것과 동일
+-   모킹된 인스턴스를 생성후 주입
+
+``` java
+@Mock
+List<String> mockedList;
+```
+
 
 #### @MockBean
+-   @Mock과 비슷하지만 Spring Context (IoC Container)의 타입에 맞는 인스턴스를 주입한다.
+
+``` java
+@MockBean
+UserRepository mockRepository;
+```
 
 #### @InjectMocks
 
