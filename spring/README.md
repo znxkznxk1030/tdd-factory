@@ -109,6 +109,16 @@ UserRepository mockRepository;
 @Spy
 ```
 
+### Stubbing 하기
+``` java
+when(메소드(INPUT)).thenReturn(Output)
+```
+
+### 검증 하기
+``` java
+verify(Mock, 호출 횟수).메소드(INPUT)
+```
+
 ### Biz 테스트 세팅하기
 
 #### 1\. 어노테이션 세팅
